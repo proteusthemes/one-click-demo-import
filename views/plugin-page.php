@@ -40,6 +40,7 @@ do_action( 'pt-ocdi/plugin_page_header' );
 		);
 	}
 
+	do_action('pt-ocdi/plugin_intro_text_before');
 	// Start output buffer for displaying the plugin intro text.
 	ob_start();
 	?>
@@ -80,6 +81,7 @@ do_action( 'pt-ocdi/plugin_page_header' );
 
 	// Display the plugin intro text (can be replaced with custom text through the filter below).
 	echo wp_kses_post( apply_filters( 'pt-ocdi/plugin_intro_text', $plugin_intro_text ) );
+	do_action('pt-ocdi/plugin_intro_text_after');
 	?>
 
 	<?php if ( empty( $this->import_files ) ) : ?>
